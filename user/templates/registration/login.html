@@ -1,0 +1,27 @@
+{% extends 'user/base.html' %}
+
+{% block content %}
+<h2>Login</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <!-- {{ form.as_p }} -->
+    <div class="form-group">
+        <!-- <label for="exampleInputEmail1">Email address</label> -->
+        <input type="text" class="form-control" name='username' placeholder="Username">
+        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+    </div>
+<br/>
+      <div class="form-group">
+        <!-- <label for="exampleInputPassword1">Password</label> -->
+        <input type="password" class="form-control" name='password' placeholder="Password">
+        <small id="emailHelp" class="form-text text-muted">Please change Password after initial Login</small>
+      </div>
+      <br/>
+    <input type="submit" value="Login">
+</form>
+
+Forgot Password?<a href="{% url 'contact' %}">click here</a>
+{% endblock %}
+
+
